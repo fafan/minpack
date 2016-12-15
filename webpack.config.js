@@ -26,6 +26,13 @@ var config = {
       {
         test: /\.(scss|css|eot|svg|ttf|woff|woff2|jpeg|jpg|png|ico)$/,
         loader: 'file-loader?name=[name].[hash].[ext]&publicPath=assets/[ext]/&outputPath=' + BUILD_DIR
+      },
+      {
+        test: /\.jsx$/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015','react']
+        }
       }
     ]
   }
